@@ -25,5 +25,11 @@
             android:layout_height="wrap_content"
             android:text="Activate Single Worker" />
 
+        <Button
+            android:id="@+id/btnPeriodicWorker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activate Periodic Worker" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
