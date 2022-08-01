@@ -6,6 +6,10 @@ import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Button btnSingleWorker, btnPeriodicWorker;
+    private Button btnSingleWorker, btnPeriodicWorker, btnNotification;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +48,15 @@ public class MainActivity extends AppCompatActivity {
                 WorkManager.getInstance().enqueue(request);
             }
         });
-    }
 
+        // SINGLE WORKER WITH NOTIFICATION
+        btnNotification = findViewById(R.id.btnNotification);
+        btnNotification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                WorkRequest request = OneTimeWorkRequest.from(NotificationWorker.class);
+                WorkManager.getInstance().enqueue(request);
+            }
+        });
+    }
 }

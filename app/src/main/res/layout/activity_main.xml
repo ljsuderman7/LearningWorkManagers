@@ -31,5 +31,11 @@
             android:layout_height="wrap_content"
             android:text="Activate Periodic Worker" />
 
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Activate Notification Worker" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
